@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+
+    <title>Honeycomb</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="http://erood.github.io/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="http://erood.github.io/css/blog-post.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar-inverse"class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <!--change background colors on page reload-->
+      <script>
+      var colors = ['#0078FF', '#077596', 'rgb(50, 218, 113)', 'rgba(12, 26, 154, 0.86)', '#17bf63', '#2196F3', '#607D8B', '#0D47A1', '#ffad1f' ];
+
+      var changeBackground = function() {
+        document.getElementById("navbar-inverse").style.background = colors[Math.floor(Math.random()*colors.length)];
+      };
+      changeBackground();
+      </script>
+      <!--end change background colors on page reload-->
+        <div class="container">
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://erikrood.com">Erik Rood</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="http://erikrood.com/about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="http://erikrood.com/contact.html">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-10">
+
+            <!--normally use ~8, using wider to match iframe-->
+                <!-- Blog Post -->
+                <!-- (begin) porting google sheets data into array of quick stats -->
+                <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+
+                <script type='text/javascript'>
+
+
+                  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1K0tYfHOSFw5EK3-a70dDkoRCExcpscnnZj2Xe7NwR6U/';
+
+                  function init() {
+                    Tabletop.init( { key: publicSpreadsheetUrl,
+                                     callback: showInfo,
+                                     simpleSheet: true } )
+                  }
+
+                  //passing the data into the html grid here
+                  //select global cereal variable here:
+                  var cereal = "honeycomb"
+                  function showInfo(data, tabletop) {
+                    for(i=0; i< data.length; i++){
+                        if (data[i]["Cereal"] == cereal){
+                           console.log(data[i]["Cereal"])
+                           console.log(data[i]["Price"])
+                           document.getElementById("Price").innerHTML += "&nbsp&nbsp;" + "<b style='color:rgb(33, 150, 243)'>" + data[i]["Price"]+"</b>";
+                           document.getElementById("Prev_wk_close").innerHTML += "&nbsp&nbsp;" + "<b style='color:rgb(33, 150, 243);font-size:110%';>" +data[i]["Prev_wk_close"]+"</b>";
+                           document.getElementById("52_wk_high").innerHTML += "&nbsp&nbsp;" + "<b style='color:rgb(33, 150, 243)'>" + data[i]["52_wk_high"]+"</b>";
+                           document.getElementById("Change_num").innerHTML += "&nbsp&nbsp;"+ "<b style='font-size:110%'>" + data[i]["Change"]+"</b>";
+                           document.getElementById("52_wk_low").innerHTML += "&nbsp&nbsp;" + "<b style='color:rgb(33, 150, 243)'>" + data[i]["52_wk_low"]+"</b>";
+
+                           var score = parseInt($('#Change_num').text().trim());
+                           var color = 'red';
+                           if (!isNaN(score)) {
+                               if (score >= 0) {
+                                   color = '#093';
+                                   //document.getElementById("Change_num").css += "<b style='color:red' /b>" ;
+                                   //$('#Change_num').css('color', color);
+                               }
+                               if (score < 0) {
+                                   color = '#ff333a';
+                                   //document.getElementById("Change_num").css += "<b style='color:red' /b>" ;
+
+                               }
+                               $('#Change_num').css('color', color);
+                               console.log(color);
+                           }
+
+                         }
+                         else {
+                           console.log("No match");
+                        }
+                      }
+                    }
+                  window.addEventListener('DOMContentLoaded', init)
+                </script>
+                <!-- (end) porting google sheets data into array of quick stats -->
+
+
+
+                  <p class="lead" style="font-size:100%;">Honeycomb (COMB)</p>
+                  <hr>
+
+                  <div class="container">
+                    <div id="lead_row" class="row">
+                      <div id="Price_group" class="col-md-4">
+                        <span class = "Price_name" style="font-size:120%;color:black;font-weight:bold;">  Price: </span>
+                        <br>
+                        <span class = "Price_num" id = "Price"  style="font-size:110%;" </span>
+                      </div>
+                      <div id = "Prev_wk_close" class="col-md-4">
+                        <span class = "Prev_wk_close_name" style="font-size:120%;color:black;font-weight:bold;" >  Prev. Wk Close: </span>
+                        <br>
+                        <span class = "Prev_wk_close_num" id = "Prev_wk_close" style="font-size:110%;" </span>
+                      </div>
+                      <div id= "wk_high" class="col-md-4">
+                        <span class = "52_wk_high_name" style="font-size:120%;color:black;font-weight:bold;">  52-wk High: </span>
+                        <br>
+                        <span id = "52_wk_high" style="font-size:110%;" </span>
+                      </div>
+                    </div>
+                    <!-- second row (first block blank for thicker price)-->
+                    <div id="second_row" class="row">
+                      <div id = "Buffer" class="col-md-4">
+                        <span> </span>
+                        <br>
+                        <span> </span>
+                      </div>
+                      <div id="Change" class="col-md-4">
+                        <span class = "Change_name" style="color:black;font-weight:bold;font-size:120%">  Change (% chg): </span>
+                        <br>
+                        <span id = "Change_num" style="font-size:110%;" </span>
+                      </div>
+                      <div id="wk_low" class="col-md-4">
+                        <span class = "52_wk_low_name" style="font-size:120%;color:black;font-weight:bold;">  52-wk Low: </span>
+                        <br>
+                        <span id = "52_wk_low" style="font-size:110%;" </span>
+
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <p id="center_title" class="p">
+                    <b style="font-size:120%;">APPL</b>
+                  </p>
+                <iframe src="http://erikrood.com/Posts/Cereal_market/LUCK_chart.html" scrolling="no" align="middle" frameBorder="0" width=100% height=300></iframe>
+                <br>
+
+
+
+                 <br>
+                 <div class="container">
+                 <div id="info_row" class="row">
+                   <div id="About_cereal" class="col-md-7">
+                     <b style="font-size:120%;color:black;font-weight:bold;">About</b>
+                     <p>Honeycomb cereal consists of honey-flavored corn cereal bits in a honeycomb shape. The cereal is known to make your mouth expand and your teeth more prominent while consuming. </p>
+                   </div>
+                   <div id = "Cereal_facts" class="col-md-5">
+                     <b style="font-size:120%;color:black;font-weight:bold;">Fundamentals</b>
+
+                     <p><u>Founded</u>: 1965
+                     </p>
+                     <p><u>Parent company</u>: Post Foods
+                     </p>
+                     <p><u>Mascot</u>: Crazy Craving (a rodent meant to be the personification of hunger)
+                     </p>
+                   </div>
+                 <p>
+                    </div>
+
+                    <div id="others_row" class="row">
+                    <br>
+                    <p><b style="font-size: 120%;color:#0078ff">Research another cereal:</b>  </p>
+                    <!-- /.col-lg-6 -->
+                    <div id="cereal_column" class="col-sm-12">
+                        <div class="panel panel-default">
+                          <div class="panel-body">
+                            <ul>
+                              <li><a href="http://erikrood.com/Posts/cereal_market.html">[Cereal Market Summary]</a>
+                              </li>
+                              <li><a href="http://erikrood.com/Posts/Cereal_market/applejacks.html">Apple Jacks</a>
+                              </li>
+                              <li><a href="http://erikrood.com/Posts/Cereal_market/capncrunch.html">Cap'n Crunch</a>
+                              </li>
+                              <li><a href="http://erikrood.com/Posts/Cereal_market/cookiecrisp.html">Cookie Crisp</a>
+                              </li>
+                              <li><a href="http://erikrood.com/Posts/Cereal_market/cornflakes.html">Corn Flakes</a>
+                              </li>
+                              <li><a href="http://erikrood.com/Posts/Cereal_market/countchocula.html">Count Chocula</a>
+                              </li>
+                              <li><a href="http://erikrood.com/Posts/Cereal_market/frostedflakes.html">Frosted Flakes</a>
+                              </li>
+                              <li><a href="http://erikrood.com/Posts/Cereal_market/honeycomb.html">Honeycomb</a>
+                              </li>
+                              <li><a href="http://erikrood.com/Posts/Cereal_market/honeynutcheerios.html">Honey Nut Cheerios</a>
+                              </li>
+                            <li><a href="http://erikrood.com/Posts/Cereal_market/luckycharms.html">Lucky Charms</a>
+                            </li>
+
+                            <li><a href="http://erikrood.com/Posts/Cereal_market/reesespuffs.html">Reese's Puffs</a>
+                            </li>
+                            <!--<li><a href="http://erikrood.com/Posts/Cereal_market/ricekrispies.html">Rice Krispies</a>
+                            </li>-->
+                            <li><a href="http://erikrood.com/Posts/Cereal_market/trix.html">Trix</a>
+                            </li>
+                            <li><a href="http://erikrood.com/Posts/Cereal_market/wheaties.html">Wheaties</a>
+                            </li>
+
+                          </ul>
+                          </div>
+                      </div>
+                    </div>
+                </div>
+
+
+                </div>
+                </div>
+
+            </div>
+
+        <br>
+        <!-- /.row -->
+
+<!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:##0078FF; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+  <br>
+  <br>
+<form action="//datadriventhoughts.us13.list-manage.com/subscribe/post?u=262c11ce96e8bc9ddb6d07ea8&amp;id=e37c601527" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	<label for="mce-EMAIL">Enter your email to be notified when I post something</label>
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_262c11ce96e8bc9ddb6d07ea8_e37c601527" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+<!--End mc_embed_signup-->
+
+<!--Footer-->
+        <hr>
+        <div class="container">
+        <footer>
+            <div class="row">
+                <div class="col-lg-10">
+                    <p>Copyright &copy; Erik Rood 2017</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+      </div>
+        <!-- Footer -->
+
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script href="www.erikrood.com/Posts/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script href="www.erikrood.com/Posts/js/bootstrap.js"></script>
+    <!--Google analytics-->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-89151121-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>

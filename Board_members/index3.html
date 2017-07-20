@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+body {
+  font: 8px sans-serif;
+}
+
+svg text{
+  fill:grey;
+  font-size:9px;
+}
+svg .values text{
+  pointer-events:none;
+  stroke-width: 0.5px;
+}
+.groups:hover{
+  cursor:pointer;
+  font-weight:bold;
+}
+</style>
+<body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="http://erikrood.com/Board_members/viz.v1.1.0.min.js"></script>
+<script>
+
+var data = [
+['Apple Inc.','JPMorgan Chase & Co.',1],
+['Apple Inc.','Walt Disney Co',1],
+['Apple Inc.','General Electric Company',1],
+['Apple Inc.','Chevron Corporation',1],
+['Alphabet Inc','Cisco Systems, Inc.',1],
+['Microsoft Corporation','Visa Inc',1],
+['Exxon Mobil Corporation','Procter & Gamble Co',1],
+['Exxon Mobil Corporation','Oracle Corporation',1],
+['Exxon Mobil Corporation','Merck & Co., Inc.',1],
+['Exxon Mobil Corporation','Wal-Mart Stores, Inc.',1],
+['Exxon Mobil Corporation','JPMorgan Chase & Co.',1],
+['Amazon.com, Inc.','Merck & Co., Inc.',1],
+['Facebook Inc','Walt Disney Co',1],
+['Facebook Inc','Procter & Gamble Co',1],
+['Johnson & Johnson','International Business Machines Corp.',1],
+['Johnson & Johnson','Boeing Co',1],
+['JPMorgan Chase & Co.','Apple Inc.',1],
+['JPMorgan Chase & Co.','Comcast Corporation',1],
+['JPMorgan Chase & Co.','Wal-Mart Stores, Inc.',1],
+['JPMorgan Chase & Co.','Exxon Mobil Corporation',1],
+['General Electric Company','Apple Inc.',1],
+['General Electric Company','Merck & Co., Inc.',1],
+['General Electric Company','QUALCOMM, Inc.',1],
+['Wells Fargo & Co','Pfizer Inc.',1],
+['Wells Fargo & Co','Walt Disney Co',1],
+['Wells Fargo & Co','Chevron Corporation',1],
+['AT&T Inc.','Boeing Co',1],
+['AT&T Inc.','United Parcel Service, Inc.',1],
+['Procter & Gamble Co','International Business Machines Corp.',1],
+['Procter & Gamble Co','Exxon Mobil Corporation',1],
+['Procter & Gamble Co','Facebook Inc',1],
+['Procter & Gamble Co','3M Co',1],
+['Procter & Gamble Co','Citigroup Inc',1],
+['Chevron Corporation','Apple Inc.',1],
+['Chevron Corporation','3M Co',1],
+['Chevron Corporation','Wells Fargo & Co',1],
+['Wal-Mart Stores, Inc.','Merck & Co., Inc.',1],
+['Wal-Mart Stores, Inc.','JPMorgan Chase & Co.',1],
+['Wal-Mart Stores, Inc.','QUALCOMM, Inc.',1],
+['Wal-Mart Stores, Inc.','Exxon Mobil Corporation',1],
+['Pfizer Inc.','Visa Inc',1],
+['Pfizer Inc.','Wells Fargo & Co',1],
+['Visa Inc','Walt Disney Co',1],
+['Visa Inc','Microsoft Corporation',1],
+['Visa Inc','Pfizer Inc.',1],
+['The Coca-Cola Co','3M Co',1],
+['The Coca-Cola Co','Walt Disney Co',1],
+['Merck & Co., Inc.','Exxon Mobil Corporation',1],
+['Merck & Co., Inc.','Wal-Mart Stores, Inc.',1],
+['Merck & Co., Inc.','General Electric Company',1],
+['Merck & Co., Inc.','Amazon.com, Inc.',1],
+['Citigroup Inc','Oracle Corporation',1],
+['Citigroup Inc','Comcast Corporation',1],
+['Citigroup Inc','International Business Machines Corp.',1],
+['Citigroup Inc','Procter & Gamble Co',1],
+['Oracle Corporation','Exxon Mobil Corporation',1],
+['Oracle Corporation','Citigroup Inc',1],
+['Comcast Corporation','JPMorgan Chase & Co.',1],
+['Comcast Corporation','Citigroup Inc',1],
+['Walt Disney Co','Apple Inc.',1],
+['Walt Disney Co','Wells Fargo & Co',1],
+['Walt Disney Co','The Coca-Cola Co',1],
+['Walt Disney Co','Visa Inc',1],
+['Walt Disney Co','Facebook Inc',1],
+['Home Depot Inc','United Parcel Service, Inc.',1],
+['Home Depot Inc','PepsiCo, Inc.',1],
+['International Business Machines Corp.','Procter & Gamble Co',1],
+['International Business Machines Corp.','3M Co',1],
+['International Business Machines Corp.','Johnson & Johnson',1],
+['International Business Machines Corp.','Medtronic PLC',1],
+['International Business Machines Corp.','Citigroup Inc',1],
+['Cisco Systems, Inc.','Goldman Sachs Group Inc',1],
+['Cisco Systems, Inc.','Alphabet Inc',1],
+['PepsiCo, Inc.','Schlumberger Limited.',1],
+['PepsiCo, Inc.','Home Depot Inc',1],
+['PepsiCo, Inc.','United Parcel Service, Inc.',1],
+['Schlumberger Limited.','PepsiCo, Inc.',1],
+['Amgen, Inc.','Boeing Co',1],
+['Amgen, Inc.','3M Co',1],
+['Amgen, Inc.','United Technologies Corporation',1],
+['Amgen, Inc.','McDonald',1],
+['Amgen, Inc.','Apple Inc.',1],
+['3M Co','Chevron Corporation',1],
+['3M Co','International Business Machines Corp.',1],
+['3M Co','Amgen, Inc.',1],
+['3M Co','The Coca-Cola Co',1],
+['3M Co','AbbVie Inc',1],
+['3M Co','Procter & Gamble Co',1],
+['Kraft Heinz Co','McDonald',1],
+['McDonald','Wells Fargo & Co',1],
+['McDonald','Amgen, Inc.',1],
+['McDonald','Kraft Heinz Co',1],
+['Medtronic PLC','International Business Machines Corp.',1],
+['AbbVie Inc','3M Co',1],
+['United Parcel Service, Inc.','PepsiCo, Inc.',1],
+['United Parcel Service, Inc.','QUALCOMM, Inc.',1],
+['United Parcel Service, Inc.','AT&T Inc.',1],
+['United Parcel Service, Inc.','Home Depot Inc',1],
+['QUALCOMM, Inc.','General Electric Company',1],
+['QUALCOMM, Inc.','United Parcel Service, Inc.',1],
+['QUALCOMM, Inc.','Wal-Mart Stores, Inc.',1],
+['Goldman Sachs Group Inc','Cisco Systems, Inc.',1],
+['Boeing Co','Amgen, Inc.',1],
+['Boeing Co','AT&T Inc.',1],
+['Boeing Co','U.S. Bancorp',1],
+['Boeing Co','3M Co',1],
+['Boeing Co','Johnson & Johnson',1],
+['U.S. Bancorp','Boeing Co',1],
+['United Technologies Corporation','Amgen, Inc.',1],
+['Apple Inc.','Amgen, Inc.',1],
+['Wells Fargo & Co','McDonald',1],
+['Chevron Corporation','Amgen, Inc.',1],
+['Chevron Corporation','McDonald',1],
+['Amgen, Inc.','Chevron Corporation',1],
+['3M Co','Boeing Co',1],
+['McDonald','Chevron Corporation',1],
+['AbbVie Inc','Boeing Co',1],
+['Boeing Co','AbbVie Inc',1],
+];
+
+var colors = {
+'Apple Inc.':"#da4480",
+'AbbVie Inc':"#5ab449",
+'Amgen, Inc.':"#7f5acd",
+'Amazon.com, Inc.':"#aab740",
+'Boeing Co':"#ce58c0",
+'Citigroup Inc':"#50a26e",
+'Comcast Corporation':"#d1434b",
+'Cisco Systems, Inc.':"#45c0bc",
+'Chevron Corporation':"#ce5929",
+'Walt Disney Co':"#4e7bda",
+'Facebook Inc':"#d49d3c",
+'General Electric Company':"#6660a3",
+'Alphabet Inc':"#7b853c",
+'Goldman Sachs Group Inc':"#b58dde",
+'Home Depot Inc':"#97622e",
+'International Business Machines Corp.':"#609dd6",
+'Johnson & Johnson':"#e29074",
+'JPMorgan Chase & Co.':"#9c4b88",
+'Kraft Heinz Co':"#ab505f",
+'The Coca-Cola Co':"#dc85b6",
+'McDonald':"#da4480",
+'Medtronic PLC':"#5ab449",
+'3M Co':"#7f5acd",
+'Merck & Co., Inc.':"#aab740",
+'Microsoft Corporation':"#ce58c0",
+'Oracle Corporation':"#50a26e",
+'PepsiCo, Inc.':"#d1434b",
+'Pfizer Inc.':"#45c0bc",
+'Procter & Gamble Co':"#ce5929",
+'QUALCOMM, Inc.':"#4e7bda",
+'Schlumberger Limited.':"#d49d3c",
+'AT&T Inc.':"#6660a3",
+'United Parcel Service, Inc.':"#7b853c",
+'U.S. Bancorp':"#b58dde",
+'United Technologies Corporation':"#97622e",
+'Visa Inc':"#609dd6",
+'Wells Fargo & Co':"#e29074",
+'Wal-Mart Stores, Inc.':"#9c4b88",
+'Exxon Mobil Corporation':"#ab505f",
+
+
+};
+
+var sortOrder =[
+
+'AbbVie Inc',
+'Alphabet Inc',
+'Amazon.com, Inc.',
+'Amgen, Inc.',
+'Apple Inc.',
+'AT&T Inc.',
+
+'Comcast Corporation',
+
+'Cisco Systems, Inc.',
+'Chevron Corporation',
+'Citigroup Inc',
+
+'Exxon Mobil Corporation',
+'Facebook Inc',
+'General Electric Company',
+'Goldman Sachs Group Inc',
+'Home Depot Inc',
+'International Business Machines Corp.',
+'Johnson & Johnson',
+'JPMorgan Chase & Co.',
+'Kraft Heinz Co',
+'McDonald',
+'Medtronic PLC',
+'Merck & Co., Inc.',
+'Microsoft Corporation',
+'Oracle Corporation',
+'PepsiCo, Inc.',
+'Pfizer Inc.',
+'Procter & Gamble Co',
+'QUALCOMM, Inc.',
+'Schlumberger Limited.',
+'3M Co',
+
+'Walt Disney Co',
+'Boeing Co',
+'U.S. Bancorp',
+
+'United Parcel Service, Inc.',
+'United Technologies Corporation',
+'Visa Inc',
+'Wal-Mart Stores, Inc.',
+'The Coca-Cola Co',
+'Wells Fargo & Co',
+
+];
+
+function sort(a,b){ return d3.ascending(sortOrder.indexOf(a),sortOrder.indexOf(b)); }
+
+var ch = viz.ch().data(data)
+      .padding(.01)
+      .sort(sort)
+	  .innerRadius(200)
+	  .outerRadius(208)
+	  .duration(1000)
+	  .chordOpacity(0.3)
+	  .labelPadding(.11)
+      .fill(function(d){ return colors[d];});
+
+var width=725, height=650;
+
+var svg = d3.select("body").append("svg").attr("height",height).attr("width",width);
+//center the circle here:
+svg.append("g").attr("transform", "translate(375,310)").call(ch);
+
+// adjust height of frame in bl.ocks.org
+d3.select(self.frameElement).style("height", height+"px").style("width", width+"px");
+</script>
+<!--Google analytics-->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-89151121-1', 'auto');
+ga('send', 'pageview');
+
+</script>

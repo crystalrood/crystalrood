@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Erik Rood</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="http://erood.github.io/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="http://erood.github.io/css/blog-post.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar-inverse"class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <!--change background colors on page reload-->
+      <script>
+      var colors = ['#0078FF', '#077596', 'rgb(50, 218, 113)', 'rgba(12, 26, 154, 0.86)', '#17bf63', '#2196F3', '#607D8B', '#0D47A1', '#ffad1f' ];
+
+      var changeBackground = function() {
+        document.getElementById("navbar-inverse").style.background = colors[Math.floor(Math.random()*colors.length)];
+      };
+      changeBackground();
+      </script>
+      <!--end change background colors on page reload-->
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://erood.github.io/">Erik Rood</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="http://erood.github.io/about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="http://erood.github.io/contact.html">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+        <p class="lead">The Cereal Market</p>
+        <hr>
+        <p>
+          <b style="font-size: 110%;color:#0078ff">Market summary:</b>
+        </p>
+        <p>
+          <b>Most 'valuable' cereals in the past year</b>
+          <br>
+          <i style="font-size: 80%">Note: Cheerios (Ch) is the 'currency' used to value the cereals. Higher number means more valuable.
+            If a cereal has >100 Ch, it means it is more valuable than Cheerios. Details behind calculation in 'About' section below.</i>
+        </p>
+        <!--<img style= max-width:100%; height= auto; src="cereals_ranked.png" alt="Ranked Cereals">-->
+        <iframe width="600" height="365.5" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1K0tYfHOSFw5EK3-a70dDkoRCExcpscnnZj2Xe7NwR6U/pubchart?oid=1706826631&amp;format=interactive"></iframe>
+        <br>
+        <p>
+          <b>Trailing 5-year 'value' of each cereal (Interactive)</b>
+        </p>
+        <iframe src="http://erikrood.com/Posts/Cereal_market/multi_cereal_selector.html" scrolling="no" align="middle" frameBorder="0" width=954 height=600></iframe>
+
+<br>
+        <p style="font-size: 80%"> If interested in the definition of value/the Cheerios (Ch) currency, read 'About the Cereal Market' below.<p>
+        <!-- Blog Articles Well -->
+            <!--<h4>The Cereal Market</h4>-->
+            <br>
+            <p>
+              <b style="font-size: 110%;color:#0078ff">Market detail (view pricing/fundamentals by cereal):</b>
+            </p>
+
+
+          <!-- /.col-lg-6 -->
+          <div id="cereal_column" class="col-sm-12">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <ul>
+                    <li><a href="http://erikrood.com/Posts/Cereal_market/applejacks.html">Apple Jacks (APPL)</a>
+                    </li>
+                    <li><a href="http://erikrood.com/Posts/Cereal_market/capncrunch.html">Cap'n Crunch (CAPN)</a>
+                    </li>
+                    <li><a href="http://erikrood.com/Posts/Cereal_market/cookiecrisp.html">Cookie Crisp (COOK)</a>
+                    </li>
+                    <li><a href="http://erikrood.com/Posts/Cereal_market/cornflakes.html">Corn Flakes (CORN.F)</a>
+                    </li>
+                    <li><a href="http://erikrood.com/Posts/Cereal_market/countchocula.html">Count Chocula (VAMP)</a>
+                    </li>
+                    <li><a href="http://erikrood.com/Posts/Cereal_market/frostedflakes.html">Frosted Flakes (FROFL)</a>
+                    </li>
+                    <li><a href="http://erikrood.com/Posts/Cereal_market/honeycomb.html">Honeycomb (COMB)</a>
+                    </li>
+                    <li><a href="http://erikrood.com/Posts/Cereal_market/honeynutcheerios.html">Honey Nut Cheerios (HNCH)</a>
+                    </li>
+                  <li><a href="http://erikrood.com/Posts/Cereal_market/luckycharms.html">Lucky Charms (LUCK)</a>
+                  </li>
+
+                  <li><a href="http://erikrood.com/Posts/Cereal_market/reesespuffs.html">Reese's Puffs (REES)</a>
+                  </li>
+                  <!--<li><a href="http://erikrood.com/Posts/Cereal_market/ricekrispies.html">Rice Krispies</a>
+                  </li>-->
+                  <li><a href="http://erikrood.com/Posts/Cereal_market/trix.html">Trix (TRX)</a>
+                  </li>
+                  <li><a href="http://erikrood.com/Posts/Cereal_market/wheaties.html">Wheaties (WHEAT)</a>
+                  </li>
+
+                </ul>
+                </div>
+            </div>
+          </div>
+          <!-- /.col-lg-6 -->
+      </div>
+
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+            <!-- Blog Post Content Column -->
+            <div class="col-lg-10" >
+
+              <p>
+                <b style="font-size: 110%;color:#0078ff">About the Cereal Market</b>
+              </p>
+              <p>
+                <b>What is the 'Cereal Market'?</b>
+              </p>
+              <p> The Cereal Market is an attempt to rank 'value' of cereals over time using Google search interest as
+                an (imperfect) proxy. Basically, I wanted to see which cereal was most popular based on search interest and
+              that devolved into this pointless exercise. I've split out specific summary pages for the cereals listed at the bottom, complete with
+              'price'(shown over time) and some 'fundamentals' of each cereal. Pop one of those pages open and you'll probably understand what I'm going for here. </p>
+                <br>
+                <p>
+                  <b>How does the Cereal Market work? (and what are Cheerios (Ch)?)</b>
+                </p>
+                <p> As mentioned above, I am gauging 'value' of cereals over time using Google search interest as a proxy. Unfortunately,
+                  Google Trends has a few limitations:
+                  <ol>
+                    <li> Google Trends does not provide an absolute metric (e.g. # of searches) of interest, it normalizes the item against historical interest in said item across a 0-100 scale.
+                      This makes grabbing the Google Trends information for each cereal meaningless, since both could read 100 on the scale but have drastically different search interest.
+                  </li>
+                  <li>
+                  To solve the first issue, we need to compare the cereals directly against each other in the same Google Trends
+                  query. However, although Google Trends does let us compare multiple items against each other (solving the lack of an absolute metric issue), it limits the comparison to 5 items at a
+                  time.</li>
+                </ol><br>
+
+                  So, to circumvent the above two issues, I used an unofficial API for Google Trends, PyTrends, and wrote a script to compare each cereal 1:1 with Cheerios.
+                  This way, Cheerios acts as a sort normalizing factor, allowing two cereals (e.g. Trix and Lucky Charms) to be compared directly against each other by
+                  comparing both to Cheerios separately. For example, if Trix reads 10 against Cheerios while Lucky Charms reads 15 for that same week, I know Lucky Charms has
+                  more interest than Trix in that period. <br>
+                  <br>
+                  That's pretty much how the 'value' calculation works, I loop through all cereals, comparing 1:1 with Cheerios, then
+                  I take those numbers, divide by the Cheerios interest #s, and multiply by 100. I call this currency <b>Cheerios (Ch)</b>, as you'll see throughout
+                    site. So, if you look through cereals and see a value > 100, that
+                  means it had more interest than Cheerios during that particular time frame; conversely if < 100 then less interest in Cheerios.
+                </p>
+                <br>
+                <p>
+                  <b>How often is the cereal market updated?</b>
+                </p>
+                <p> I'm pulling weekly interest metrics, so more or less will update weekly. </p>
+                  <br>
+                <!--mailchimp-->
+                <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+                <style type="text/css">
+                	#mc_embed_signup{background:##0078FF; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+                	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+                </style>
+                <div id="mc_embed_signup">
+                <form action="//datadriventhoughts.us13.list-manage.com/subscribe/post?u=262c11ce96e8bc9ddb6d07ea8&amp;id=e37c601527" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+                	<label for="mce-EMAIL">Enter your email to be notified when I write something ~1x/month
+</label>
+                	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_262c11ce96e8bc9ddb6d07ea8_e37c601527" tabindex="-1" value=""></div>
+                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                    </div>
+                </form>
+                </div>
+                <!--end mailchimp-->
+
+                <p>
+                  <!--<b>Want a cereal added?</b>-->
+                </p>
+            <!--normally use ~8, using wider to match iframe-->
+                <!-- Blog Post -->
+
+
+
+
+</div>
+                    <!--commenting out info for now
+
+                    <h4>Info</h4>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="panel panel-default">
+                              <div class="panel-body">
+                                <ul>
+                                <li><a href="erood.github.io/D3_example/index.html">Example D3 Visualization</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                              </ul>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+
+                  -->
+                    <!-- /.row -->
+
+
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+<!--Google analytics-->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-89151121-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+
+<footer>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>Copyright &copy; Erik Rood 2017</p>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+</footer>
+
+
+</html>

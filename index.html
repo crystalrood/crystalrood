@@ -9,13 +9,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>About</title>
+    <title>Erik Rood</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/blog-post.css" rel="stylesheet">
+    <link href="css/blog-home.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,6 +33,7 @@
       <!--change background colors on page reload-->
       <script>
       var colors = ['#0078FF', '#077596', 'rgb(50, 218, 113)', 'rgba(12, 26, 154, 0.86)', '#17bf63', '#2196F3', '#607D8B', '#0D47A1', '#ffad1f' ];
+
       var changeBackground = function() {
         document.getElementById("navbar-inverse").style.background = colors[Math.floor(Math.random()*colors.length)];
       };
@@ -48,7 +49,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="erood.github.io/index.html">Erik Rood</a>
+                <a class="navbar-brand" href="erood.github.io">Erik Rood</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -59,6 +60,7 @@
                     <li>
                         <a href="erood.github.io/contact.html">Contact</a>
                     </li>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -71,45 +73,164 @@
 
         <div class="row">
 
-            <!-- Blog Post Content Column -->
-            <div class="col-lg-12">
-            <!--normally use ~8, using wider to match iframe-->
-                <!-- Blog Post -->
+            <!-- Blog Entries Column -->
 
-                <!-- Title
-                <h1>Interconnectedness of Companies/h1>-->
 
-                <!-- Author
-                <p class="lead">
-                    by <a href="#">Erik Rood</a>
-                </p> -->
-
-                <!--<hr>-->
-
-                <!-- Date/Time
-                <p><span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM</p>
-                -->
-
-                <p>
-                <!-- Post Content -->
-                <br>
-
-                <p>Coming soon</p>
-
-                <br>
-                <p></p>
+                <!-- Blog Articles Well -->
+                    <h4>Articles</h4>
+                    <div class="row">
+                        <!-- /.col-lg-6 -->
+                        <div class="col-sm-12">
+                            <div class="panel panel-default">
+                              <div class="panel-body">
+                                <ul>
+                                <li><a href="http://erikrood.com/board_members.html">Interconnectedness of Companies</a>
+                                </li>
+                                <li><a href="http://erikrood.com/Posts/tax_rates.html">Corporate Tax Rates</a>
+                                </li>
+                                <li><a href="http://erikrood.com/Posts/letter_frequency.html">Printing Cost Calculator</a>
+                                </li>
+                                <li><a href="http://erikrood.com/Posts/cereal_market.html">Cereal Market</a>
+                                </li>
+                                <li><a href="http://erikrood.com/Posts/week_length.html">Are there trends in how people experience the passing of time from week to week? [ongoing experiment]</a>
+                                </li>
+                                <li><a href="http://erikrood.com/Posts/DJIA.html">Why the Dow Jones Industrial Average is useless</a>
+                                </li>
+                                <li><a href="http://erikrood.com/Posts/college_roi_.html">On average, foregoing college in favor of entering the workforce + investing tuition costs nets higher returns</a>
+                                </li>
+                              </ul>
+                              </div>
+                          </div>
+                        </div>
+                        <!-- /.col-lg-6 -->
                     </div>
-                </div>
+                    <h4>Python (data cleaning)</h4>
+                    <div class="row">
+                        <!-- /.col-lg-6 -->
+                        <div class="col-sm-12">
+                            <div class="panel panel-default">
+                              <div class="panel-body">
+                                <ul>
+                                <li><a href="http://erikrood.com/Python_References/notebooks.html">Past Jupyter Notebooks [messy working examples used in past analyses]</a>
+                                </li>
+                                <li><a href="http://erikrood.com/Python_References/dropping_rows_cols_pandas.html">Dropping rows/columns from a Pandas dataframe</a>
+                                </li>
+                                <li><a href="http://erikrood.com/Python_References/import_export_csv.html">Import (or export) data from CSV into (or out of) a Pandas dataframe </a>
+                                </li>
+                                <li><a href="http://erikrood.com/Python_References/rename_columns.html">Rename Pandas dataframe columns</a>
+                                </li>
+                                <li><a href="http://erikrood.com/Python_References/find_replace_col.html">Find and replace characters in Pandas dataframe columns</a>
+                                </li>
+                                <li><a href="http://erikrood.com/Python_References/create_new_col_pandas.html">Create a new column in Pandas dataframe</a>
+                                </li>
+                                <li><a href="http://erikrood.com/Python_References/join_merge_pandas.html">Merge two dataframes together in Pandas</a>
+                                </li>
+                                <li><a href="http://erikrood.com/Python_References/pandas_pivot.html">Create a pivot table from a Pandas dataframe</a>
+                                </li>
+                                <li><a href="http://erikrood.com/Python_References/substring_python.html">Slice a string in python (right, left, mid equivalents)</a>
+                                </li>
+                                <li><a href="http://erikrood.com/Posts/py_gsheets.html">Connecting Python to Google Sheets and pushing a Pandas dataframe to a worksheet</a>
+                                </li>
+                                <li>more coming soon...
+                                </li>
+                              <!--  <li><a href="http://chrisalbon.com/python/pandas_replace_values.html">Find and replace values in Pandas </a>
+                              </li>-->
 
-            </div>
-            <!-- Blog Sidebar Widgets Column -->
+                              </ul>
+                              </div>
+                          </div>
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+
+                    <h4>Projects</h4>
+                    <div class="row">
+                        <!-- /.col-lg-6 -->
+                        <div class="col-sm-12">
+                            <div class="panel panel-default">
+                              <div class="panel-body">
+                                <ul>
+                                  <li><a href="http://mescale.co/">Mescale - Simplified Weight Tracking</a>
+                                  </li>
+
+                              </ul>
+                              </div>
+                          </div>
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+
+                    <h4>Data Visualization</h4>
+                    <div class="row">
+                        <!-- /.col-lg-6 -->
+                        <div class="col-sm-12">
+                            <div class="panel panel-default">
+                              <div class="panel-body">
+                                <ul>
+                                <li>Coming soon...
+                                </li>
+
+                              <!--  <li><a href="http://chrisalbon.com/python/pandas_replace_values.html">Find and replace values in Pandas </a>
+                              </li>-->
+
+                              </ul>
+                              </div>
+                          </div>
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
 
 
 
-            </div>
+                    <!--commenting out info for now
 
-        </div>
+                    <h4>Info</h4>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="panel panel-default">
+                              <div class="panel-body">
+                                <ul>
+                                <li><a href="erood.github.io/D3_example/index.html">Example D3 Visualization</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                                <li><a href="#">Category Name</a>
+                                </li>
+                              </ul>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+
+                  -->
+                    <!-- /.row -->
+
+
         <!-- /.row -->
+        <br>
+        <!-- Begin MailChimp Signup Form -->
+        <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+        #mc_embed_signup{background:##0078FF; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+        /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+        </style>
+        <div id="mc_embed_signup">
+        <form action="//datadriventhoughts.us13.list-manage.com/subscribe/post?u=262c11ce96e8bc9ddb6d07ea8&amp;id=e37c601527" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll">
+        <label for="mce-EMAIL">Enter your email to be notified when I write something ~1x/month</label>
+        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_262c11ce96e8bc9ddb6d07ea8_e37c601527" tabindex="-1" value=""></div>
+        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+        </div>
+        </form>
+        </div>
+
+        <!--End mc_embed_signup-->
+
 
         <hr>
 
@@ -126,6 +247,30 @@
     <script src="js/bootstrap.js"></script>
 
 </body>
+
 <!--Google analytics-->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-89151121-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+
+
+<footer>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>Copyright &copy; Erik Rood 2017</p>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+</footer>
+
 
 </html>
