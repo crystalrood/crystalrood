@@ -4291,8 +4291,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar {
   position: relative;
-  min-height: 50px;
-  margin-bottom: 20px;
+  min-height: 70px;
+  margin-bottom: 25px;
   border: 1px solid transparent;
 }
 @media (min-width: 768px) {
@@ -4714,28 +4714,28 @@ fieldset[disabled] .navbar-default .btn-link:hover,
 fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
-/*edit navbar header, old green color: rgba(25, 202, 95, 0.91)*/
+/*edit navbar header, old green color: rgba(25, 202, 95, 0.91) background-color: #440044;*/
 .navbar-inverse {
-  background-color: #0078FF;
-  border-color: #0a0a0a;
+  background-image: url('../wave_peanuts.png')
+
 }
 .navbar-inverse .navbar-brand {
   color: rgb(255, 255, 255);
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
-  color: #87b9ff;
+  color: #db7ddb;
   background-color: transparent;
 }
 .navbar-inverse .navbar-text {
-  color: #9d9d9d;
+  color: #3d003d;
 }
 .navbar-inverse .navbar-nav > li > a {
   color: rgb(255, 255, 255);
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-  color: #87b9ff;
+  color: #db7ddb;
   background-color: transparent;
 }
 .navbar-inverse .navbar-nav > .active > a,
