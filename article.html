@@ -9,19 +9,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Blog Post - Start Bootstrap Template</title>
+    <title>Crystal Rood</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/blog-post.css" rel="stylesheet">
+    <link href="css/blog-home.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <img src="wave_peanuts.png" height="120px" width="100%"/>
     <![endif]-->
 
 </head>
@@ -29,30 +30,32 @@
 <body>
 
     <!-- Navigation -->
-    <nav id="navbar-inverse"class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    
+      <nav id="navbar-inverse"class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <!--end change background colors on page reload-->
         <div class="container">
+
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
+              
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+                <a class="navbar-brand" href="crystalrood.github.io">Crystal Rood</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="crystalrood.github.io/about.html">About</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="crystalrood.github.io/contact.html">Contact</a>
                     </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -65,114 +68,128 @@
 
         <div class="row">
 
-            <!-- Blog Post Content Column -->
-            <div class="col-lg-8">
-
-                <!-- Blog Post -->
-
-                <!-- Title -->
-                <h1>Blog Post Title</h1>
-
-                <!-- Author -->
-                <p class="lead">
-                    by <a href="#">Start Bootstrap</a>
-                </p>
-
-                <hr>
-
-                <!-- Date/Time -->
-                <p><span class="glyphicon glyphicon-time"></span> Posted on August 24, 2013 at 9:00 PM</p>
-
-                <hr>
-
-                <!-- Preview Image -->
-                <img class="img-responsive" src="http://placehold.it/900x300" alt="">
-
-                <hr>
-
-                <!-- Post Content -->
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
-
-                <hr>
-
-                <!-- Blog Comments -->
+            <!-- Blog Entries Column -->
 
 
+                <!-- Blog Articles Well -->
+                    <h3>Code Snippets</h3>
+                    <div class="row">
+                        <!-- /.col-lg-6 -->
+                        <div class="col-sm-12">
+                            <div class="panel panel-default">
+                              <div class="panel-body">
+                                <h4  style='color:purple;'>Python</h4>
+                                pandas DataFrames
+                                <ul>
+                                  <li> Getting relevent libraries for data analysis
+                                  </li>
+                                  <li> Importing CSV to a pandas DataFrame
+                                  </li>
+                                  <li> Getting a list of column headers in pandas Dataframe
+                                  </li>
+                                  <li> Renaming columns in a pandas DataFrame
+                                  </li>
+                                  <li> Deleting a column in a pandas DataFrame
+                                  </li>
+                                  <li> Selecting rows in a DataFrame based on values
+                                  </li>
+                                  <li> Selecting rows in a DataFrame based on values in a column
+                                  </li>
+                                  <li> Adding a new column in a pandas DataFrame
+                                  </li>
+                                  <li> Adding a row to the end of a pandas Dataframe
+                                  </li>
+                                  <li> Creating a new DataFrame based on another DataFrame
+                                  </li>
+                                  <li> Dropping NaN rows or changing NaN to a different value (e.g. 0)
+                                  </li>
+                                  <li> Counting the number of rows in a DataFrame
+                                  </li>
+                                  <li> Creating a pivot table with a pandas DataFrame
+                                  </li>
+                                  <li> Aggregating column values within a pandas DataFrame
+                                  </li>
+                                  <li> Grouping value in a pandas DataFrame
+                                  </li>
+                                  <li> Writing a pandas DataFrame to a CSV file
+                                  </li>
+                                  <li> Deleting a row within a DataFrame based on a column 
+                                  </li>
+                                  <li> Merging (or joining) 2 DataFrames
+                                  </li>
+                                  <li> Resetting DataFrame index
+                                  </li>
+                                </ul>
+                                Other Python
+                                <ul>
+                                  <li> Running a script from local in iPython notebook
+                                  </li>
 
-
-
-                <!-- Comment -->
-
-                        <!-- End Nested Comment -->
+                                </ul>
+                                <h4 style='color:purple;'>Javascript</h4>
+                                <ul>
+                                  <li> coming soon...
+                                  </li>
+                                </ul>
+                                <h4 style='color:purple;'>HTML/CSS</h4>
+                                <ul>
+                                  <li> coming soon...
+                                  </li>
+                                </ul>
+                                <h4 style='color:purple;'>SQL</h4>
+                                <ul>
+                                  <li> coming soon...
+                                  </li>
+                                </ul>
+                              </div>
+                          </div>
+                        </div>
+                        <!-- /.col-lg-6 -->
                     </div>
-                </div>
+                    <br></br>
+                    <h3>Writing</h3>
+                    <div class="row">
+                        <!-- /.col-lg-6 -->
+                        <div class="col-sm-12">
+                            <div class="panel panel-default">
+                              <div class="panel-body">
+                                <ul>
+                                <li> coming soon...
+                                </li>
+                              <!--  <li><a href="http://chrisalbon.com/python/pandas_replace_values.html">Find and replace values in Pandas </a>
+                              </li>-->
 
-            </div>
+                              </ul>
+                              </div>
+                          </div>
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+                    <br></br>
+                    <h3>Projects</h3>
+                    <div class="row">
+                        <!-- /.col-lg-6 -->
+                        <div class="col-sm-12">
+                            <div class="panel panel-default">
+                              <div class="panel-body">
+                                <ul>
+                                  <li> coming soon...
+                                  </li>
 
-            <!-- Blog Sidebar Widgets Column -->
-            <div class="col-md-4">
-              <!-- Side Widget Well -->
-              <div class="well">
-                  <h4>Side Widget Well</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
-              </div>
-              <!-- Blog Categories Well -->
-              <div class="well">
-                  <h4>Blog Categories</h4>
-                  <div class="row">
-                      <div class="col-lg-6">
-                          <ul class="list-unstyled">
-                              <li><a href="#">Category Name</a>
-                              </li>
-                              <li><a href="#">Category Name</a>
-                              </li>
-                              <li><a href="#">Category Name</a>
-                              </li>
-                              <li><a href="#">Category Name</a>
-                              </li>
-                          </ul>
-                      </div>
-                      <div class="col-lg-6">
-                          <ul class="list-unstyled">
-                              <li><a href="#">Category Name</a>
-                              </li>
-                              <li><a href="#">Category Name</a>
-                              </li>
-                              <li><a href="#">Category Name</a>
-                              </li>
-                              <li><a href="#">Category Name</a>
-                              </li>
-                          </ul>
-                      </div>
-                  </div>
-                  <!-- /.row -->
-              </div>
+                              </ul>
+                              </div>
+                          </div>
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
 
-                </div>
+        <br>
 
-
-
-
-            </div>
-
-        </div>
-        <!-- /.row -->
 
         <hr>
 
         <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
-                </div>
-            </div>
-            <!-- /.row -->
-        </footer>
+
 
     </div>
     <!-- /.container -->
@@ -184,5 +201,19 @@
     <script src="js/bootstrap.js"></script>
 
 </body>
+
+
+
+
+<footer>
+    <div class="row">
+        <div class="col-lg-12">
+            <p>Copyright &copy; Crystal Rood 2017</p>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+</footer>
+
 
 </html>
