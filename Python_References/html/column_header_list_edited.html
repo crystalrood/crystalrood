@@ -1,0 +1,497 @@
+<div class="container" id="notebook-container">
+<div class="cell border-box-sizing text_cell rendered">
+
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><font color="grey">Examples of column operations in pandas</font></p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Importing-Libraries"><font color="purple">Importing Libraries</font></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Creating-dataframe"><br/><br/><font color="purple">Creating dataframe</font></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#creating a dataframe</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'fruit'</span><span class="p">:</span> <span class="p">[</span><span class="s1">'blueberries'</span><span class="p">,</span> <span class="s1">'apples'</span><span class="p">,</span> <span class="s1">'bananas'</span><span class="p">,</span> <span class="s1">'raspberries'</span><span class="p">,</span> <span class="s1">'strawberries'</span><span class="p">],</span> 
+        <span class="s1">'quanitity'</span><span class="p">:</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+        <span class="s1">'price'</span><span class="p">:</span> <span class="p">[</span><span class="mf">2.50</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">,</span> <span class="mf">3.00</span><span class="p">,</span> <span class="mf">2.00</span><span class="p">]}</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'fruit'</span><span class="p">,</span> <span class="s1">'quanitity'</span><span class="p">,</span> <span class="s1">'price'</span><span class="p">])</span>
+<span class="n">df1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>fruit</th>
+<th>quanitity</th>
+<th>price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>blueberries</td>
+<td>15</td>
+<td>2.5</td>
+</tr>
+<tr>
+<th>1</th>
+<td>apples</td>
+<td>12</td>
+<td>1.0</td>
+</tr>
+<tr>
+<th>2</th>
+<td>bananas</td>
+<td>10</td>
+<td>0.5</td>
+</tr>
+<tr>
+<th>3</th>
+<td>raspberries</td>
+<td>5</td>
+<td>3.0</td>
+</tr>
+<tr>
+<th>4</th>
+<td>strawberries</td>
+<td>3</td>
+<td>2.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Listing-columns-in-the-dataframe"><br/><br/><font color="purple">Listing columns in the dataframe</font></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># super simple, just use list)()</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_text output_subarea output_execute_result">
+<pre>['fruit', 'quanitity', 'price']</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Adding-a-new-column-to-an-existing-dataframe"><br/><br/><font color="purple">Adding a new column to an existing dataframe</font></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df1</span><span class="p">[</span><span class="s1">'inventory_value'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[</span><span class="s1">'price'</span><span class="p">]</span> <span class="o">*</span> <span class="n">df1</span><span class="p">[</span><span class="s1">'quanitity'</span><span class="p">]</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>fruit</th>
+<th>quanitity</th>
+<th>price</th>
+<th>inventory_value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>blueberries</td>
+<td>15</td>
+<td>2.5</td>
+<td>37.5</td>
+</tr>
+<tr>
+<th>1</th>
+<td>apples</td>
+<td>12</td>
+<td>1.0</td>
+<td>12.0</td>
+</tr>
+<tr>
+<th>2</th>
+<td>bananas</td>
+<td>10</td>
+<td>0.5</td>
+<td>5.0</td>
+</tr>
+<tr>
+<th>3</th>
+<td>raspberries</td>
+<td>5</td>
+<td>3.0</td>
+<td>15.0</td>
+</tr>
+<tr>
+<th>4</th>
+<td>strawberries</td>
+<td>3</td>
+<td>2.0</td>
+<td>6.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Deleting-a-column-from-a-dataframe"><br/><br/><font color="purple">Deleting a column from a dataframe</font></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">del</span> <span class="n">df1</span><span class="p">[</span><span class="s1">'inventory_value'</span><span class="p">]</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>fruit</th>
+<th>quanitity</th>
+<th>price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>blueberries</td>
+<td>15</td>
+<td>2.5</td>
+</tr>
+<tr>
+<th>1</th>
+<td>apples</td>
+<td>12</td>
+<td>1.0</td>
+</tr>
+<tr>
+<th>2</th>
+<td>bananas</td>
+<td>10</td>
+<td>0.5</td>
+</tr>
+<tr>
+<th>3</th>
+<td>raspberries</td>
+<td>5</td>
+<td>3.0</td>
+</tr>
+<tr>
+<th>4</th>
+<td>strawberries</td>
+<td>3</td>
+<td>2.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Renaming-columns"><br/><br/><font color="purple">Renaming columns</font></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df1</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'crop_type'</span><span class="p">,</span> <span class="s1">'number_plants'</span><span class="p">,</span> <span class="s1">'price_per_plant'</span><span class="p">]</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>crop_type</th>
+<th>number_plants</th>
+<th>price_per_plant</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>blueberries</td>
+<td>15</td>
+<td>2.5</td>
+</tr>
+<tr>
+<th>1</th>
+<td>apples</td>
+<td>12</td>
+<td>1.0</td>
+</tr>
+<tr>
+<th>2</th>
+<td>bananas</td>
+<td>10</td>
+<td>0.5</td>
+</tr>
+<tr>
+<th>3</th>
+<td>raspberries</td>
+<td>5</td>
+<td>3.0</td>
+</tr>
+<tr>
+<th>4</th>
+<td>strawberries</td>
+<td>3</td>
+<td>2.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Re-ordering-columns"><br/><br/><font color="purple">Re-ordering columns</font></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+<div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">df1</span><span class="p">[[</span><span class="s1">'number_plants'</span><span class="p">,</span> <span class="s1">'price_per_plant'</span><span class="p">,</span> <span class="s1">'crop_type'</span><span class="p">]]</span>
+<span class="n">df1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>number_plants</th>
+<th>price_per_plant</th>
+<th>crop_type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>15</td>
+<td>2.5</td>
+<td>blueberries</td>
+</tr>
+<tr>
+<th>1</th>
+<td>12</td>
+<td>1.0</td>
+<td>apples</td>
+</tr>
+<tr>
+<th>2</th>
+<td>10</td>
+<td>0.5</td>
+<td>bananas</td>
+</tr>
+<tr>
+<th>3</th>
+<td>5</td>
+<td>3.0</td>
+<td>raspberries</td>
+</tr>
+<tr>
+<th>4</th>
+<td>3</td>
+<td>2.0</td>
+<td>strawberries</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
