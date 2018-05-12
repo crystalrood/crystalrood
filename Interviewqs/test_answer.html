@@ -147,7 +147,10 @@
         </ul>
         <br>
         
-    
+        <pre class="prettyprint" style="width: 60%">
+    active = df[df.spend >0].copy()
+    active[‘is_fraud’] = active.status == ‘fraud’
+    pct = active.groupby(‘date’).is_fraud.mean() * 100</pre>
 
         <br></br>
         <b>Q2)</b> How many accounts were first labeled as fraudulent today?
@@ -159,11 +162,24 @@
         </ul>
         <br>
 
+        <pre class="prettyprint" style="width: 60%">
+    fraud = df[df.status == ‘fraud’]
+    yesterday = fraud[fraud.date == ‘{today}’][[‘account_id’]]
+    prev_day = fraud[fraud.date == ‘{yesterday}’][[‘account_id’]]
+    both_days = pd.merge(yestereday, prev_day, on=’ad_account’, how=’left’)
+    n_new = both_days.iloc[:, 1].is_null().sum()</pre>
 
         <br></br>
         <b>Q3)</b> Now assume that we recently rolled out an appeals process such a “FRAUD” tag can be set back to “OPEN”. How would you measure the financial benefit of this change?
 
         <br>
+
+        <pre class="prettyprint" style="width: 60%">
+    fraud = df[df.status == ‘fraud’]
+    last_fraud_day = fraud.groupby(‘account_id’).date.max().reset_index()
+    df2 = pd.merge(df, fraud, on=’account_id’)
+    after_fraud = df2[df2.date_x > df2.date_y]
+    total = after_fraud.spend.sum()</pre>
 
 
         </div>
